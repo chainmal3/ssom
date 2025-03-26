@@ -1,34 +1,63 @@
 {
   "name": "ssom",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Sound Systems of Melbourne website",
+  "private": true,
+  "main": "index.ts",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "export": "next export",
     "start": "next start",
     "lint": "next lint",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint:fix": "next lint --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepare": "pnpm run build",
+    "test": "echo \"No tests configured\" && exit 0"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "sound systems",
+    "melbourne",
+    "audio",
+    "sound system culture",
+    "soundsystem",
+    "soundsystem culture",
+    "soundsystem culture melbourne",
+    "soundsystem melbourne",
+    "soundsystem melbourne culture",
+    "melbourne soundsystems",
+    "melbourne sound system culture",
+    "melbourne sound systems",
+    "melbourne parties",
+    "melbourne party",
+    "melbourne sound system parties",
+    "melbourne sound system party",
+    "melbourne sound system events",
+    "melbourne sound system event"
+  ],
+  "author": "Link",
   "license": "ISC",
   "dependencies": {
-    "next": "^15.2.3",
+    "next": "^15.2.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@types/node": "^22.13.11",
+    "@types/node": "^22.13.13",
     "@types/react": "^19.0.12",
     "autoprefixer": "^10.4.21",
     "eslint": "^9.23.0",
-    "eslint-config-next": "^15.2.3",
+    "eslint-config-next": "^15.2.4",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.2.3",
+    "eslint-plugin-prettier": "^5.2.5",
     "postcss": "^8.5.3",
     "prettier": "^3.5.3",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.8.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
   }
 }
