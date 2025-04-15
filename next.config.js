@@ -12,7 +12,10 @@ const nextConfig = {
   // basePath: '/your-project-name',
 
   // Optional: Configure asset prefix for CDN or custom domain
-  assetPrefix: 'https://cdn.soundsystemsofmelbourne.com.au',
+  assetPrefix:
+    process.env.NODE_ENV === 'production'
+      ? 'https://cdn.soundsystemsofmelbourne.com.au'
+      : '',
 
   // Optional: Disable server-side features not compatible with static export
   serverRuntimeConfig: {},
