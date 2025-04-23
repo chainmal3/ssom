@@ -39,6 +39,8 @@
   "author": "Link",
   "license": "ISC",
   "dependencies": {
+    "date-fns": "^4.1.0",
+    "gapi-script": "^1.2.0",
     "next": "^15.3.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
