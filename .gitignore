@@ -11,3 +11,8 @@ yarn-error.log*
 .env.development.local
 .env.test.local
 .env.production.local
+
+# Screenshots and images
+*.jpeg
+*.jpg
+*.png
