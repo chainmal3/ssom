@@ -138,6 +138,26 @@
   white-space: pre-line;
 }
 
+.moreInfoButton {
+  display: inline-block;
+  margin-top: 12px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: background-color 0.2s;
+  font-weight: 500;
+}
+
+.moreInfoButton:hover {
+  background-color: white;
+  color: black;
+}
+
 .loading {
   text-align: left;
   padding: 40px;
