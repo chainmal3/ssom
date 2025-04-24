@@ -3,19 +3,25 @@ import Link from 'next/link'
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-800 text-white">
-      <div className="container mx-auto px-4 py-8">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-4 md:mb-0">
-            <p className="text-sm">
-              &copy; {new Date().getFullYear()} Sound Systems of Melbourne. All rights reserved.
+    <footer className="bg-black border-t border-gray-800 py-8">
+      <div className="swiss-container">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div>
+            <p className="text-sm uppercase tracking-wider text-gray-400">
+              &copy; {new Date().getFullYear()} Sound Systems of Melbourne
             </p>
           </div>
-          <div className="flex space-x-4">
-            <Link href="/" className="text-gray-300 hover:text-white">
+          <div className="flex space-x-8 uppercase tracking-wider text-sm justify-start md:justify-end">
+            <Link
+              href="/"
+              className="text-gray-400 hover:text-white transition-colors duration-200"
+            >
               Home
             </Link>
-            <Link href="/events" className="text-gray-300 hover:text-white">
+            <Link
+              href="/events"
+              className="text-gray-400 hover:text-white transition-colors duration-200"
+            >
               Events
             </Link>
           </div>
