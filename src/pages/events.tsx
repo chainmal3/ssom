@@ -13,8 +13,10 @@ const EventsPage: React.FC = () => {
           content="Upcoming events from Sound Systems of Melbourne"
         />
       </Head>
-      <div className="container px-4 py-8">
-        <h1 className="text-3xl font-bold mb-6">Events Calendar</h1>
+      <div className="swiss-container">
+        <h1 className="text-3xl uppercase tracking-tight mb-12 border-b border-white pb-4 max-w-2xl">
+          Events Calendar
+        </h1>
         <Calendar />
       </div>
     </Layout>

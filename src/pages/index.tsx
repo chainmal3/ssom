@@ -13,11 +13,15 @@ export default function HomePage() {
           content="Sound Systems of Melbourne - Gig Guide"
         />
       </Head>
-      <div className="container px-4 py-8">
-        <h1 className="text-3xl font-bold mb-6">Sound Systems of Melbourne</h1>
+      <div className="swiss-container">
+        <h1 className="text-3xl uppercase tracking-tight mb-12 border-b border-white pb-4 max-w-2xl">
+          Sound Systems of Melbourne
+        </h1>
 
-        <section className="my-8">
-          <h2 className="text-2xl font-semibold mb-4">Upcoming Gigs</h2>
+        <section className="my-12">
+          <h2 className="text-2xl uppercase tracking-wide mb-8 pb-2 inline-block border-b border-white">
+            Upcoming Gigs
+          </h2>
           <Calendar />
         </section>
       </div>
