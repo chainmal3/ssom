@@ -5,14 +5,23 @@
   padding: 20px;
 }
 
+.calendarHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
 .calendarTitle {
   font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 24px;
   color: white;
   position: relative;
   text-transform: uppercase;
   letter-spacing: 1px;
+  margin: 0;
 }
 
 .calendarTitle::after {
@@ -23,6 +32,89 @@
   width: 60px;
   height: 2px;
   background-color: white;
+}
+
+.subscriptionContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.subscribeLabel {
+  color: #d4d4d4;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.subscriptionButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.subscriptionButton {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.subscriptionButton:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Notification System */
+.notification {
+  color: white;
+  padding: 12px 15px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+  animation: fadeIn 0.3s;
+  position: relative;
+  font-weight: 500;
+  text-align: center;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.errorNotification {
+  background-color: rgba(200, 0, 0, 0.85);
+}
+
+.successNotification {
+  background-color: rgba(0, 150, 50, 0.85);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 .eventsGrid {
@@ -183,9 +275,80 @@
   border-left: 2px solid white;
 }
 
+.calendarIntegration {
+  margin-top: 16px;
+}
+
+.calendarIntegrationTitle {
+  font-size: 0.85rem;
+  color: #d4d4d4;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.calendarButtons {
+  display: flex;
+  gap: 10px;
+}
+
+.calendarButton {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.calendarButton:hover {
+  background-color: white;
+  color: black;
+}
+
 /* Media queries for responsive grid */
 @media (min-width: 768px) {
   .eventsGrid {
     grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* Mobile responsiveness for calendar integration */
+@media (max-width: 480px) {
+  .calendarHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .subscriptionContainer {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .calendarButtons {
+    gap: 8px;
+  }
+
+  .calendarButton {
+    padding: 4px 8px;
+    font-size: 0.75rem;
+  }
+
+  .subscriptionButton {
+    padding: 3px 8px;
+    font-size: 0.75rem;
+  }
+
+  .errorNotification {
+    padding: 8px 12px;
+    font-size: 0.8rem;
   }
 }
