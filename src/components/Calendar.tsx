@@ -91,7 +91,7 @@ const Calendar: React.FC = () => {
     }
   }
 
-  if (loading) return <div className={styles.loading}>Loading events...</div>
+  if (loading) return <div className={styles.loading}>Loading gigs...</div>
   if (error) return <div className={styles.error}>{error}</div>
 
   return (
@@ -106,9 +106,9 @@ const Calendar: React.FC = () => {
       )}
 
       <div className={styles.calendarHeader}>
-        <h2 className={styles.calendarTitle}>Upcoming Events</h2>
+        <h2 className={styles.calendarTitle}>UPCOMING GIGS</h2>
         <div className={styles.subscriptionContainer}>
-          <span className={styles.subscribeLabel}>Sync Calendar:</span>
+          <span className={styles.subscribeLabel}>Subscribe to Calendar:</span>
           <div className={styles.subscriptionButtons}>
             <a
               href={generateGoogleCalendarSubscriptionUrl()}
@@ -118,7 +118,7 @@ const Calendar: React.FC = () => {
               className={styles.subscriptionButton}
               title="Add all SSOM events to your Google Calendar"
             >
-              Google
+              GCAL
             </a>
             <a
               href={generateICalSubscriptionUrl()}
@@ -130,6 +130,9 @@ const Calendar: React.FC = () => {
             >
               iCal
             </a>
+          </div>
+          <div className={styles.syncTimeNotification}>
+            Subscription may take up to 10 mins to sync all events
           </div>
         </div>
       </div>
@@ -204,7 +207,7 @@ const Calendar: React.FC = () => {
                       className={styles.calendarButton}
                       title="Add this event to Google Calendar"
                     >
-                      Google
+                      GCAL
                     </a>
                     <button
                       onClick={() => handleAddToICal(event)}
