@@ -106,7 +106,7 @@ const Calendar: React.FC = () => {
       )}
 
       <div className={styles.calendarHeader}>
-        <h2 className={styles.calendarTitle}>UPCOMING GIGS</h2>
+        <h2 className={styles.calendarTitle}>UPCOMING DANCES</h2>
         <div className={styles.subscriptionContainer}>
           <span className={styles.subscribeLabel}>Subscribe to Calendar:</span>
           <div className={styles.subscriptionButtons}>
@@ -132,7 +132,7 @@ const Calendar: React.FC = () => {
             </a>
           </div>
           <div className={styles.syncTimeNotification}>
-            Subscription may take up to 10 mins to sync all events
+            may take up to 10mins to sync all events
           </div>
         </div>
       </div>
