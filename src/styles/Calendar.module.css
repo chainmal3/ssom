@@ -1,5 +1,4 @@
 .calendarContainer {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
   max-width: 900px;
   margin: 0;
   padding: 20px;
@@ -212,7 +211,7 @@
 }
 
 .eventTitle {
-  font-size: 1.25rem;
+  font-size: 1.42rem;
   font-weight: 600;
   margin: 0 0 12px 0;
   color: white;
