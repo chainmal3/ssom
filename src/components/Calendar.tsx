@@ -106,7 +106,7 @@ const Calendar: React.FC = () => {
       )}
 
       <div className={styles.calendarHeader}>
-        <h2 className={styles.calendarTitle}>UPCOMING GIGS</h2>
+        <h2 className={styles.calendarTitle}>UPCOMING DANCES</h2>
         <div className={styles.subscriptionContainer}>
           <span className={styles.subscribeLabel}>Subscribe to Calendar:</span>
           <div className={styles.subscriptionButtons}>
@@ -132,7 +132,7 @@ const Calendar: React.FC = () => {
             </a>
           </div>
           <div className={styles.syncTimeNotification}>
-            Subscription may take up to 10 mins to sync all events
+            may take up to 10mins to sync all events
           </div>
         </div>
       </div>
@@ -143,17 +143,29 @@ const Calendar: React.FC = () => {
           {events.map((event) => (
             <div key={event.id} className={styles.eventCard}>
               <div className={styles.eventDate}>
-                {event.start?.dateTime
-                  ? format(
-                      parseISO(event.start.dateTime),
-                      'MMM d yyyy',
-                    ).toUpperCase()
-                  : event.start?.date
+                <div>
+                  {event.start?.dateTime
                     ? format(
-                        parseISO(event.start.date),
+                        parseISO(event.start.dateTime),
                         'MMM d yyyy',
                       ).toUpperCase()
-                    : 'Date not specified'}
+                    : event.start?.date
+                      ? format(
+                          parseISO(event.start.date),
+                          'MMM d yyyy',
+                        ).toUpperCase()
+                      : 'Date not specified'}
+                </div>
+                <div className={styles.eventWeekday}>
+                  {event.start?.dateTime
+                    ? format(
+                        parseISO(event.start.dateTime),
+                        'EEEE',
+                      ).toUpperCase()
+                    : event.start?.date
+                      ? format(parseISO(event.start.date), 'EEEE').toUpperCase()
+                      : ''}
+                </div>
               </div>
               <div className={styles.eventDetails}>
                 <h3 className={styles.eventTitle}>{event.summary}</h3>

@@ -2,6 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom font definitions */
+@font-face {
+  font-family: 'Oito';
+  src: url('/fonts/Oito.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Söhne-Buch';
+  src: url('/fonts/Söhne-Buch.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Söhne-Halbfett';
+  src: url('/fonts/Söhne-Halbfett.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* Swiss design color palette - only black, white, and shades of gray */
   --color-black: #000000;
@@ -15,19 +40,33 @@
   --color-gray-700: #404040;
   --color-gray-800: #262626;
   --color-gray-900: #171717;
+
+  /* Font families */
+  --font-header: 'Oito', sans-serif;
+  --font-body: 'Söhne-Buch', 'Sohne-Buch', sans-serif;
 }
 
-/* Base styles for Swiss design - black background, white text */
+/* Base styles for Swiss design - support for full-bleed background image */
 @layer base {
   html,
   body {
-    @apply bg-black text-white;
+    @apply text-white;
     margin: 0;
     padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: var(--font-body) !important;
   }
 
   body {
     @apply antialiased;
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+      url('/images/GRPhoto_NF-CafeMediterraneo_HIRES-141.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
 
   h1,
@@ -35,8 +74,33 @@
   h3,
   h4,
   h5,
-  h6 {
-    @apply font-bold tracking-tight text-white;
+  h6,
+  .calendarTitle,
+  .eventTitle,
+  [class*='Title'],
+  .uppercase,
+  .subscribeLabel,
+  .calendarIntegrationTitle {
+    @apply tracking-tight text-white;
+    font-family: var(--font-header) !important;
+    font-weight: normal;
+  }
+
+  p,
+  div,
+  span,
+  button,
+  a,
+  input,
+  textarea,
+  select,
+  li,
+  td,
+  th,
+  .subscriptionButton,
+  .calendarButton,
+  .syncTimeNotification {
+    font-family: var(--font-body) !important;
   }
 
   h1 {
@@ -65,8 +129,9 @@
   }
 
   .swiss-container {
-    @apply container mx-auto px-4 py-8 bg-black text-white;
+    @apply container mx-auto px-4 py-8 text-white;
     max-width: 1200px;
+    background-color: transparent;
   }
 
   .logo-placeholder {
@@ -84,13 +149,6 @@
   }
 
   /* Override common Tailwind component classes */
-  .bg-white,
-  .bg-gray-100,
-  .bg-gray-200,
-  .bg-gray-300 {
-    @apply bg-black;
-  }
-
   .text-black,
   .text-gray-800,
   .text-gray-900 {
@@ -101,7 +159,8 @@
   header,
   footer,
   main {
-    @apply bg-black text-white;
+    @apply text-white;
+    background-color: transparent;
   }
 }
 
