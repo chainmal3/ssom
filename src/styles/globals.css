@@ -17,17 +17,26 @@
   --color-gray-900: #171717;
 }
 
-/* Base styles for Swiss design - black background, white text */
+/* Base styles for Swiss design - support for full-bleed background image */
 @layer base {
   html,
   body {
-    @apply bg-black text-white;
+    @apply text-white;
     margin: 0;
     padding: 0;
+    height: 100%;
+    width: 100%;
   }
 
   body {
     @apply antialiased;
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+      url('/images/GRPhoto_NF-CafeMediterraneo_HIRES-141.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
 
   h1,
@@ -65,8 +74,9 @@
   }
 
   .swiss-container {
-    @apply container mx-auto px-4 py-8 bg-black text-white;
+    @apply container mx-auto px-4 py-8 text-white;
     max-width: 1200px;
+    background-color: transparent;
   }
 
   .logo-placeholder {
@@ -84,13 +94,6 @@
   }
 
   /* Override common Tailwind component classes */
-  .bg-white,
-  .bg-gray-100,
-  .bg-gray-200,
-  .bg-gray-300 {
-    @apply bg-black;
-  }
-
   .text-black,
   .text-gray-800,
   .text-gray-900 {
@@ -101,7 +104,8 @@
   header,
   footer,
   main {
-    @apply bg-black text-white;
+    @apply text-white;
+    background-color: transparent;
   }
 }
 

@@ -141,9 +141,8 @@
 }
 
 .eventCard {
-  background-color: #262626; /* dark grey background */
+  background-color: transparent;
   padding: 20px;
-  border-left: 2px solid white;
   display: grid;
   grid-template-columns: 120px 1fr;
   gap: 20px;
@@ -277,8 +276,7 @@
   padding: 40px;
   font-size: 1.2rem;
   color: white;
-  background-color: #404040;
-  border-left: 2px solid #a3a3a3;
+  background-color: transparent;
 }
 
 .noEvents {
@@ -286,8 +284,7 @@
   padding: 40px;
   font-size: 1.1rem;
   color: #d4d4d4;
-  background-color: #262626;
-  border-left: 2px solid white;
+  background-color: transparent;
 }
 
 .calendarIntegration {
