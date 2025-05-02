@@ -143,17 +143,29 @@ const Calendar: React.FC = () => {
           {events.map((event) => (
             <div key={event.id} className={styles.eventCard}>
               <div className={styles.eventDate}>
-                {event.start?.dateTime
-                  ? format(
-                      parseISO(event.start.dateTime),
-                      'MMM d yyyy',
-                    ).toUpperCase()
-                  : event.start?.date
+                <div>
+                  {event.start?.dateTime
                     ? format(
-                        parseISO(event.start.date),
+                        parseISO(event.start.dateTime),
                         'MMM d yyyy',
                       ).toUpperCase()
-                    : 'Date not specified'}
+                    : event.start?.date
+                      ? format(
+                          parseISO(event.start.date),
+                          'MMM d yyyy',
+                        ).toUpperCase()
+                      : 'Date not specified'}
+                </div>
+                <div className={styles.eventWeekday}>
+                  {event.start?.dateTime
+                    ? format(
+                        parseISO(event.start.dateTime),
+                        'EEEE',
+                      ).toUpperCase()
+                    : event.start?.date
+                      ? format(parseISO(event.start.date), 'EEEE').toUpperCase()
+                      : ''}
+                </div>
               </div>
               <div className={styles.eventDetails}>
                 <h3 className={styles.eventTitle}>{event.summary}</h3>

@@ -204,6 +204,17 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
+  display: flex;
+  flex-direction: column;
+}
+
+.eventWeekday {
+  color: white;
+  font-size: 0.84rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 4px;
 }
 
 .eventDetails {
