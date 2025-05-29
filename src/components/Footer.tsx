@@ -22,8 +22,8 @@ const Footer: React.FC = () => {
               As we come together through rhythm, bass, and collective movement,
               we honor the rich history of gathering and storytelling that has
               taken place on these lands for over 60,000 years. We acknowledge
-              that long before speakers resonated across these spaces, the
-              vibrations of song, dance, and ceremony connected people to
+              that long before amplified speakers resonated across these spaces,
+              the vibrations of song, dance, and ceremony connected people to
               Country and to each other on this sacred ground.
             </p>
           </div>
